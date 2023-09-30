@@ -1,10 +1,13 @@
 import './App.css'
-
+import Main from './components/Main.jsx';
+import Form from './components/Form';
 function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <Main>
+        <Form />
+      </Main>
     </>
   )
 }
