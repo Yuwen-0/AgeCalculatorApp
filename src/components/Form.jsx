@@ -1,13 +1,12 @@
 import { useState } from "react"
 import ButtonIcon from "/images/icon-arrow.svg"
-
+import PropTypes from 'prop-types';
 export default function Form({ setAge }) {
   const [birth, setBirth] = useState({
     years: 0,
     months: 0,
     days: 0,
   });
-
   const date = new Date();
 
   const handleChange = (e, field) => {
@@ -76,4 +75,8 @@ export default function Form({ setAge }) {
       </div>
     </form>
   );
+}
+
+Form.propTypes = {
+  setAge: PropTypes.func.isRequired
 }
