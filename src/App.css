@@ -9,12 +9,15 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: hsl(0, 0%, 86%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main{
   display: flex;
   justify-content: center;
-  margin: 30px auto ;
+  margin:25vh auto ;
   align-items: center;
   background: hsl(0, 0%, 100%);
   display: flex;
@@ -22,7 +25,6 @@ body{
   width: 500px;
   padding: 20px;;
   border-radius: 10px;
-  
 }
 .ageInput{
   width: 80px;
@@ -103,4 +105,90 @@ body{
 
 .solution span{
   color: hsl(259, 100%, 65%);
+}
+
+@media (max-width: 566px){
+  .main{
+    margin-top:15vh ;
+    width: 70%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .ageInput{
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid hsl(0, 1%, 70%);
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .ageInput::placeholder{
+    font-size: 15px;
+  }
+
+  .submitButton{
+    position: absolute;
+    bottom: -8px;
+    left:39%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 0;
+    align-self: flex-end;
+    background-color: hsl(0, 0%, 8%);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .submitButton:hover{
+    background-color: hsl(0, 0%, 10%);
+  }
+
+  .submitButton:active{
+    background-color:hsl(259, 100%, 65%);
+    transform: scale(0.85);
+  }
+
+  .Inputs{
+    gap:9%;
+  }
+
+  .hr{
+    display: inline;
+    width: 100%;
+    background-color: hsl(0, 0%, 0%);
+    margin: 10px 0;
+    height: 1px;
+  }
+
+  .Button{
+    margin-top: 20px;
+    position: relative;
+    gap: 30PX;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 50px;
+  }
+
+  .solution > h1{
+    font-size: 37px;
+    margin: 0;
+    text-align: left;
+    height: 75px;
+  }
+
+  .solution span{
+    color: hsl(259, 100%, 65%);
+  }
+
+
+
+
 }
