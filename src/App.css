@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap');
+
 body{
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,35 +14,33 @@ body{
 .main{
   display: flex;
   justify-content: center;
+  margin: 30px auto ;
   align-items: center;
-  height: 100vh;
-}
-
-.form{
   background: hsl(0, 0%, 100%);
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 500px;
   padding: 20px;;
-  border-radius: 10px;;
+  border-radius: 10px;
+  
 }
 .ageInput{
-  width: 120px;
-  height: 60px;
+  width: 80px;
+  height: 40px;
   padding-left: 10px;
   border-radius: 10px;
   border: 1px solid hsl(0, 1%, 70%);
   outline: none;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
-}
-
-.ageInput::placeholder{
-  color: hsl(0, 1%, 70%);
 }
 
 .ageInput:focus{
   border: 1px solid hsl(259, 100%, 65%);
+}
+
+.ageInput::placeholder{
+  color: hsl(0, 1%, 70%);
 }
 
 .Inputs{
@@ -51,15 +51,56 @@ body{
 }
 
 .submitButton{
-  width: 100px;
-  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
   border-radius: 100%;
   border: 0;
   align-self: flex-end;
-  background-color: transparent;
+  background-color: hsl(0, 0%, 8%);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.icon-arrow{
-  width: 100px;
-  height: 100px;
+.submitButton:hover{
+  background-color: hsl(0, 0%, 10%);
+}
+
+.submitButton:active{
+  background-color:hsl(259, 100%, 65%);
+  transform: scale(0.85);
+}
+
+.hr{
+  display: inline;
+  width: 80%;
+  background-color: hsl(0, 0%, 0%);
+  margin: 10px 0;
+  height: 1px;
+}
+
+.Button{
+  gap: 30PX;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+}
+
+.solution{
+  width: 90%;
+}
+
+.solution > h1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  margin: 0;
+  text-align: left;
+  height: 75px;
+}
+
+.solution span{
+  color: hsl(259, 100%, 65%);
 }
