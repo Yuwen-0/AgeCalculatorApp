@@ -33,6 +33,7 @@ body{
   border-radius: 10px;
   border: 1px solid hsl(0, 1%, 70%);
   outline: none;
+  transition: all 0.3s;
   font-size: 20px;
   font-weight: bold;
 }
@@ -42,6 +43,20 @@ body{
 }
 
 .ageInput::placeholder{
+  color: hsl(0, 1%, 70%);
+}
+
+.ageInput::-webkit-inner-spin-button{
+  display: none;
+}
+
+.Inputs > *:invalid::after{
+  content: "Please enter a valid age";
+  color: hsl(0, 64%, 25%);
+  border: 1px solid hsl(0, 64%, 25%);
+}
+
+.ageInput:invalid::placeholder{
   color: hsl(0, 1%, 70%);
 }
 
@@ -107,6 +122,24 @@ body{
   color: hsl(259, 100%, 65%);
 }
 
+.invalid{
+  border: 1px solid hsla(0, 64%, 25%, 0.646);
+  color: hsl(0, 64%, 25%);
+}
+
+.invalid:focus{
+  border: 1px solid hsl(0, 64%, 25%);
+}
+
+.error{
+  color: hsl(0, 64%, 25%);
+  font-size: 13.5px;
+  font-weight: 700;
+  margin: 0;
+  transition: all 0.1s;
+}
+
+
 @media (max-width: 566px){
   .main{
     margin-top:15vh ;
@@ -117,13 +150,13 @@ body{
 
   .ageInput{
     width: 50px;
+    align-items: center;
     height: 25px;
     border-radius: 5px;
-    border: 1px solid hsl(0, 1%, 70%);
-    outline: none;
+    padding: 0 0 2px 5px;
     font-size: 20px;
     font-weight: bold;
-  }
+  }  
 
   .ageInput::placeholder{
     font-size: 15px;
@@ -156,7 +189,7 @@ body{
   }
 
   .Inputs{
-    gap:9%;
+    gap:18%;
   }
 
   .hr{
@@ -168,7 +201,7 @@ body{
   }
 
   .Button{
-    margin-top: 20px;
+    margin-top: 5px;
     position: relative;
     gap: 30PX;
     display: flex;
@@ -188,6 +221,13 @@ body{
     color: hsl(259, 100%, 65%);
   }
 
+  .error{
+    color: hsl(0, 64%, 25%);
+    font-size: 8.2px;
+    font-weight: 700;
+    transition: all 0.3s;
+  }
+  
 
 
 

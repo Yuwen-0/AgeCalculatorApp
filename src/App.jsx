@@ -26,13 +26,13 @@ function calculateAge(date, age) {
 
   if (days < 0) {
     months--;
-    days = 30 + days;
+    const daysInPreviousMonth = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+    days = daysInPreviousMonth + days;
   }
   if (months < 0) {
     years--;
     months = 12 + months;
   }
-  days++;
 
   return {
     years,
