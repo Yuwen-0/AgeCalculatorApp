@@ -9,6 +9,7 @@ export default function Form({ setAge }) {
     days: 0,
   });
 
+  const ageDivs = [...document.querySelectorAll(".Age")];
   const yearsRef = useRef();
   const monthsRef = useRef();
   const daysRef = useRef();
@@ -17,23 +18,27 @@ export default function Form({ setAge }) {
 
   const date = new Date();
 
-  const handleChange = (e, field) => {
-    const { value, classList, max, min } = e.target;
-    const parsedValue = parseInt(value);
-    
-    if (value === "" || parsedValue > max || parsedValue < min) {
-      classList.add("invalid");
-      setValid(false);
-    } else {
-      classList.remove("invalid");
-      setValid(true);
+const handleChange = (e, field) => {
+  const { value, classList, max, min } = e.target;
+  const parsedValue = parseInt(value);
+
+  const isValid = value === "" || parsedValue > max || parsedValue < min;
+
+  classList.toggle("invalid", isValid);
+  ageDivs.map(div =>{
+    if(div.classList.contains(field)){
+    div.classList.toggle("invalidText", isValid);
     }
-    
-    setBirth(prevBirth => ({
-      ...prevBirth,
-      [field]: parsedValue,
-    }));
-  };
+
+  })
+  
+  setValid(!isValid);
+
+  setBirth(prevBirth => ({
+    ...prevBirth,
+    [field]: parsedValue,
+  }));
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +49,7 @@ export default function Form({ setAge }) {
   return (
     <div className="form">
       <div className="Inputs">
-        <div className="Age">
+        <div className="Age days">
           <label htmlFor="Day">Day:</label>
           <input
             ref={daysRef}
@@ -69,7 +74,7 @@ export default function Form({ setAge }) {
             value is invalid
           </p>
         </div>
-        <div>
+        <div className="Age months">
           <label htmlFor="Month">Month:</label>
           <input
             ref={monthsRef}
@@ -94,7 +99,7 @@ export default function Form({ setAge }) {
             value is invalid
           </p>
         </div>
-        <div>
+        <div className="Age years">
           <label htmlFor="Year">Year:</label>
           <input
             ref={yearsRef}
