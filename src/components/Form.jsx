@@ -1,5 +1,4 @@
 import { useState , useRef } from "react"
-import ButtonIcon from "/images/icon-arrow.svg"
 import PropTypes from 'prop-types';
 
 export default function Form({ setAge }) {
@@ -128,7 +127,7 @@ const handleChange = (e, field) => {
       <div className="Button">
         <hr className="hr" />
         <button onClick={handleSubmit} className="submitButton">
-          <img src={ButtonIcon} alt="" />
+          <img src="../images/icon-arrow.svg" alt="" />
         </button>
       </div>
     </div>
