@@ -1,6 +1,6 @@
 import { useState , useRef } from "react"
 import PropTypes from 'prop-types';
-import buttonImg from "/public/images/icon-arrow.svg"
+import buttonImg from "/images/icon-arrow.svg"
 
 export default function Form({ setAge }) {
   const [birth, setBirth] = useState({
