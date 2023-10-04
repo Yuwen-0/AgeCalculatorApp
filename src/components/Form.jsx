@@ -1,5 +1,6 @@
 import { useState , useRef } from "react"
 import PropTypes from 'prop-types';
+import buttonImg from "/public/images/icon-arrow.svg"
 
 export default function Form({ setAge }) {
   const [birth, setBirth] = useState({
@@ -127,7 +128,7 @@ const handleChange = (e, field) => {
       <div className="Button">
         <hr className="hr" />
         <button onClick={handleSubmit} className="submitButton">
-          <img src="/images/icon-arrow.svg" alt="" />
+          <img src={buttonImg} alt="" />
         </button>
       </div>
     </div>
