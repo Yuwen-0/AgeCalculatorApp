@@ -127,7 +127,7 @@ const handleChange = (e, field) => {
       <div className="Button">
         <hr className="hr" />
         <button onClick={handleSubmit} className="submitButton">
-          <img src="../images/icon-arrow.svg" alt="" />
+          <img src="/images/icon-arrow.svg" alt="" />
         </button>
       </div>
     </div>
